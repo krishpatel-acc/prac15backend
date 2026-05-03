@@ -5,13 +5,8 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5050;
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3001';
 
-app.use(
-  cors({
-    origin: FRONTEND_URL,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.get('/message', (req, res) => {
