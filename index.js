@@ -15,7 +15,7 @@ app.use(
 app.use(express.json());
 
 app.get('/message', (req, res) => {
-  res.json({ message: 'Welcome to the React and Node.js API app!' });
+  res.json({ message: 'this is krish from backend!' });
 });
 
 app.post('/submit', (req, res) => {
