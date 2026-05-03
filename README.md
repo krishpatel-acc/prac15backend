@@ -15,3 +15,13 @@ npm start
 ```
 
 The server runs on `http://localhost:5050` by default.
+
+## Environment Variables
+
+Create these variables in Vercel Project Settings for deployment:
+
+```bash
+FRONTEND_URL=https://your-frontend-domain.vercel.app
+```
+
+Use `.env` locally and `.env.example` as the template.
