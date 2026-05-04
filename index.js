@@ -5,12 +5,17 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5050;
+const users = [];
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/message', (req, res) => {
   res.json({ message: 'this is krish from backend!' });
+});
+
+app.get('/users', (req, res) => {
+  res.json({ users });
 });
 
 app.post('/submit', (req, res) => {
@@ -22,9 +27,17 @@ app.post('/submit', (req, res) => {
     });
   }
 
+  const user = {
+    id: Date.now(),
+    name,
+    email,
+  };
+
+  users.push(user);
+
   return res.json({
     message: 'Form submitted successfully!',
-    submittedData: { name, email },
+    users,
   });
 });
 
